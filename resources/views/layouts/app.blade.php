@@ -8,9 +8,7 @@
     <title>@yield('pageTitle')</title>
     @vite('resources/js/app.js')
 </head>
-<body class="antialiased">
-    <div class="text-center">
-        @yield('content')
-    </div>
+<body class="antialiased text-center">
+    @yield('content')
 </body>
 </html>

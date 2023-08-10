@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./resources/views/base.blade.php",
-    "./resources/js/app.js",
+    "./resources/**/*.blade.php",
+    "./resources/**/*.app.js",
   ],
   theme: {
     extend: {},
