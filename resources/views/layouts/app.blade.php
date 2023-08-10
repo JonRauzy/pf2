@@ -8,7 +8,10 @@
     <title>@yield('pageTitle')</title>
     @vite('resources/js/app.js')
 </head>
-<body class="antialiased text-center">
+<body class="antialiased">
+    <h1 class="text-3xl font-bold text-center">Jon Rauzy</h1>
+    <a href="./">Home</a>
+    <a href="./blog">Blog</a>
     @yield('content')
 </body>
 </html>
