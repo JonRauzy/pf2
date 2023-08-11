@@ -13,5 +13,9 @@
     <a href="./">Home</a>
     <a href="./blog">Blog</a>
     @yield('content')
+
+    <footer class="text-center">
+        Copyright : Jon Rauzy - {{date('Y')}}
+    </footer>
 </body>
 </html>
