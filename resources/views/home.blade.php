@@ -8,6 +8,13 @@
 @section('content')
 
 <div class="text-center">
+    @if (session('success'))
+        <h4 class="text-3xl">{{ session('success') }}</h4>
+    @endif
+
+    @if (session('unsuccess'))
+        <h4 class="text-3xl">{{ session('unsuccess') }}</h4>
+    @endif
     <h2>Salut !</h2>
     <p class="p-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum amet culpa nesciunt sint nam harum, deleniti enim molestias? Similique quos numquam amet? Quis blanditiis quos, rerum repellendus accusantium non neque!</p>
 </div>
