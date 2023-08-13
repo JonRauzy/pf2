@@ -8,6 +8,12 @@
     {{session('success')}}
 @endif
 
+@auth
+
+    <h2>Salut {{ $name }}</h2>
+
+@else
+
     <form action="./login" method="POST" class="grid place-content-center mb-11">
         @csrf
         <div class="flex flex-col space-y-2">
@@ -17,7 +23,10 @@
         </div>
     </form>
 
-    <form action="./newuser" method="POST" class="grid place-content-center">
+@endauth
+
+    {{-- A REFAIRE AVANT DE DEPLOYER --}}
+    {{-- <form action="./newuser" method="POST" class="grid place-content-center">
         <h2>new</h2>
         @csrf
         <div class="flex flex-col space-y-2">
@@ -26,7 +35,7 @@
             <input type="email" name="email" id="email" placeholder="email" class="border border-black">
             <input type="submit" value="Enter" class="border border-black">
         </div>
-    </form>
+    </form> --}}
 
 
 @endsection

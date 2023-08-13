@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Models\Blog;
 use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,11 @@ Route::get('/blog', function (){
 });
 
 Route::get('/connect', function() {
-    return view('connect');
+    if(Auth::check()){
+        return view('connect', ['name'=>Auth::user()->name]);
+    }else{
+        return view('connect');
+    }
 });
 
 Route::get('/logout', [UserController::class, 'logout']);

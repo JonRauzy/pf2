@@ -32,9 +32,9 @@ class UserController extends Controller
 
 
         if(Auth::attempt($data)){
-            return redirect('./')->with('success', "utilisateur connecté");
+            return redirect('./')->with('success', $request->name);
         } else {
-            return redirect('./')->with('success', "utilisateur NON connecté");
+            return redirect('./')->with('success', "Erreur, tentative de connexion echouée");
         }
 
     }

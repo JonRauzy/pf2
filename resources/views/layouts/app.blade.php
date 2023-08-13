@@ -14,9 +14,8 @@
         <a href="./">Home</a>
         <a href="./blog">Blog</a>
         <a href="" class="bg-red-500 p-5 hover:bg-red-800 hover:text-yellow-50">Contact</a>
-        <a href="./connect">Connect</a>
+        <a href="./connect">Admin</a>
         @auth
-            <a href="./crud">Admin Page</a>
             <a href="./logout">deconnect</a>
         @endauth
     </nav>
