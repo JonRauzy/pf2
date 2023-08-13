@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\UserController;
 use App\Models\Blog;
 use App\Models\Project;
@@ -27,14 +28,15 @@ Route::get('/blog', function (){
     return view('blog', ['blogs' => $blogs]);
 });
 
-Route::get('/connect', function() {
+Route::get('/admin', function() {
     if(Auth::check()){
-        return view('connect', ['name'=>Auth::user()->name]);
+        return view('admin', ['name'=>Auth::user()->name]);
     }else{
-        return view('connect');
+        return view('admin');
     }
 });
 
 Route::get('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/newuser', [UserController::class, 'newUser']);
+Route::post('add-project', [ProjectsController::class, 'addProject']);

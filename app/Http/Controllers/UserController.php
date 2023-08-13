@@ -10,6 +10,7 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    
     public function newUser(Request $request){
         $data = $request->validate([
             'name'=> 'required',
@@ -21,15 +22,15 @@ class UserController extends Controller
         $user = User::create($data);
         auth()->login($user);  
         
-        return redirect('/connect')->with('success', "User Registered good ! ");
+        return redirect('/admin')->with('success', "User Registered good ! ");
     }
+
 
     public function login(Request $request){
         $data = $request->validate([
             'name'=>'required',
             'password'=>'required'
         ]);
-
 
         if(Auth::attempt($data)){
             return redirect('./')->with('success', $request->name);
@@ -38,6 +39,7 @@ class UserController extends Controller
         }
 
     }
+
 
     public function logout(){
         auth()->logout();

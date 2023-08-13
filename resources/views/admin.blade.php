@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('pageTitle', "Connect")
+@section('pageTitle', "Admin")
 
 @section('content')
 
@@ -10,10 +10,24 @@
 
 @auth
 
-    <h2>Salut {{ $name }}</h2>
+<h2>Salut {{ $name }}</h2>
+
+{{-- CRUD --}}
+
+<form action="./add-project" method="POST" class="grid place-content-center mb-11">
+    @csrf
+    <div class="flex flex-col space-y-2">
+        <input type="text" name="title" placeholder="titre du projet" class="border border-black m-2"> 
+        <textarea name="body" placeholder="description" class="border border-black m-2"></textarea> 
+        <input type="text" name="stack" placeholder="stack" class="border border-black m-2"> 
+        <input type="text" name="link_url" placeholder="Url" class="border border-black m-2"> 
+        <input type="text" name="image_url" placeholder="photo" class="border border-black m-2"> 
+        <input type="submit" value="Enregistrer" class="border border-black m-2"> 
+    </div>
+</form>
 
 @else
-
+    {{-- connexion form --}}
     <form action="./login" method="POST" class="grid place-content-center mb-11">
         @csrf
         <div class="flex flex-col space-y-2">
