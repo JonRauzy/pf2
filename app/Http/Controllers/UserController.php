@@ -33,7 +33,7 @@ class UserController extends Controller
         ]);
 
         if(Auth::attempt($data)){
-            return redirect('./')->with('success', $request->name);
+            return redirect('./')->with('success', "Bonjour $request->name ! ");
         } else {
             return redirect('./')->with('success', "Erreur, tentative de connexion echouée");
         }
@@ -43,6 +43,6 @@ class UserController extends Controller
 
     public function logout(){
         auth()->logout();
-        return redirect('./')->with('success', "utilisateur déconnecté");
+        return redirect('./')->with('success', "Utilisateur déconnecté");
     }
 }

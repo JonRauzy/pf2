@@ -13,7 +13,7 @@
 <h2>Salut {{ $name }}</h2>
 
 {{-- CRUD --}}
-
+<h2>PROJECTS CRUD</h2>
 <form action="./add-project" method="POST" class="grid place-content-center mb-11">
     @csrf
     <div class="flex flex-col space-y-2">
@@ -25,6 +25,36 @@
         <input type="submit" value="Enregistrer" class="border border-black m-2"> 
     </div>
 </form>
+
+<table class="border border-black m-2">
+    <tr>
+        <th class="border border-black m-2">Title</th>
+        <th class="border border-black m-2">body</th>
+        <th class="border border-black m-2">stack</th>
+        <th class="border border-black m-2">link url</th>
+        <th class="border border-black m-2">image url</th>
+        <th class="border border-black m-2">Update</th>
+        <th class="border border-black m-2">delete</th>
+    </tr>
+    @foreach ($projects as $project)
+        <tr>
+            <td class="border border-black m-2">{{ $project->title }}</td>
+            <td class="border border-black m-2">{{ $project->body }}</td>
+            <td class="border border-black m-2">{{ $project->stack }}</td>
+            <td class="border border-black m-2">{{ $project->link_url }}</td>
+            <td class="border border-black m-2">{{ $project->image_url }}</td>
+            <td><button><a class="border border-black m-2" href="edit-project/{{ $project->id }}">Update</a></button></td>
+            <td><form action="/delete-project/{{ $project->id }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button>Delete</button>
+            </form></td>
+        </tr>
+    @endforeach
+</table>
+
+
+<h2>BLOG CRUD</h2>
 
 @else
     {{-- connexion form --}}

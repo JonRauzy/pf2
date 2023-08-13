@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     $projects = Project::all();
     return view('home', ['projects' => $projects]);
@@ -30,7 +31,8 @@ Route::get('/blog', function (){
 
 Route::get('/admin', function() {
     if(Auth::check()){
-        return view('admin', ['name'=>Auth::user()->name]);
+        $projects = Project::all();
+        return view('admin', ['name'=>Auth::user()->name, 'projects'=>$projects]);
     }else{
         return view('admin');
     }
@@ -39,4 +41,10 @@ Route::get('/admin', function() {
 Route::get('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/newuser', [UserController::class, 'newUser']);
+
 Route::post('add-project', [ProjectsController::class, 'addProject']);
+Route::get('edit-project/{project}', function(Project $project){
+    return view('edit-project', ['project'=>$project]);
+});
+Route::put('send-edited-project/{project}', [ProjectsController::class, 'editProject']);
+Route::delete('delete-project/{project}', [ProjectsController::class, 'deleteProject']);

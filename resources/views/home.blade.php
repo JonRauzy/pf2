@@ -9,7 +9,7 @@
 
 <div class="text-center">
     @if (session('success'))
-        <h4 class="text-3xl">Bonjour {{ session('success') }} ! </h4>
+        <h4 class="text-3xl">{{ session('success') }}</h4>
     @endif
 
     @if (session('unsuccess'))
