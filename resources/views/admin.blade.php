@@ -95,7 +95,7 @@
 
 @else
     {{-- connexion form --}}
-    <form action="./login" method="POST" class="grid place-content-center mb-11">
+    <form action="{{ route('user.login') }}" method="POST" class="grid place-content-center mb-11">
         @csrf
         <div class="flex flex-col space-y-2">
             <input type="text" name="name" id="name" placeholder="name" class="border border-black">

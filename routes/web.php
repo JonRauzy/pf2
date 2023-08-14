@@ -41,13 +41,15 @@ Route::get('/admin', function() {
 });
 
 // connection + registrer
-Route::get('/logout', [UserController::class, 'logout']);
-Route::post('/login', [UserController::class, 'login']);
-Route::post('/newuser', [UserController::class, 'newUser']);
+Route::group(['prefix'=>'user', 'as'=>'user.'], function(){
+    Route::get('/', [UserController::class, 'logout'])->name('logout');
+    Route::post('/', [UserController::class, 'login'])->name('login');
+    Route::post('/newuser', [UserController::class, 'newUser']);
+});
 
 // project CRUD
 Route::post('add-project', [ProjectsController::class, 'addProject']);
-Route::get('edit-project/{project}', function(Project $project){
+Route::get('/edit-project/{project}', function(Project $project){
     return view('edit-project', ['project'=>$project]);
 });
 Route::put('send-edited-project/{project}', [ProjectsController::class, 'editProject']);

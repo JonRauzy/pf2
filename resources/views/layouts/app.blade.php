@@ -16,7 +16,7 @@
         <a href="" class="bg-red-500 p-5 hover:bg-red-800 hover:text-yellow-50">Contact</a>
         <a href="admin">Admin</a>
         @auth
-            <a href="logout">deconnect</a>
+            <a href="{{ route('user.logout') }}">deconnect</a>
         @endauth
     </nav>
     
