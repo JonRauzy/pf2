@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -16,6 +17,8 @@ class BlogController extends Controller
             'image_url'=>'required',
         ]);
 
+        $data['slug'] = Str::slug($data['title'], '-');
+        
         Blog::create($data);
         return redirect('/admin')->with('success', 'Article de blog a bien été enregistré');
     }

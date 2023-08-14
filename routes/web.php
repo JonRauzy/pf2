@@ -44,7 +44,7 @@ Route::get('/admin', function() {
 Route::prefix('user')->name('user.')->group( function(){
     Route::get('/', [UserController::class, 'logout'])->name('logout');
     Route::post('/', [UserController::class, 'login'])->name('login');
-    Route::post('/', [UserController::class, 'newUser'])->name('register');
+    Route::post('/register', [UserController::class, 'newUser'])->name('register');
 });
 
 // project CRUD
