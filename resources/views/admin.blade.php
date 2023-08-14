@@ -107,7 +107,7 @@
 @endauth
 
     {{-- A REFAIRE AVANT DE DEPLOYER --}}
-    {{-- <form action="./newuser" method="POST" class="grid place-content-center">
+    {{-- <form action="{{ route('user.register') }}" method="POST" class="grid place-content-center">
         <h2>new</h2>
         @csrf
         <div class="flex flex-col space-y-2">

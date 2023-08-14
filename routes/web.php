@@ -38,13 +38,13 @@ Route::get('/admin', function() {
     }else{
         return view('admin');
     }
-});
+})->name('admin');
 
 // connection + registrer
-Route::group(['prefix'=>'user', 'as'=>'user.'], function(){
+Route::prefix('user')->name('user.')->group( function(){
     Route::get('/', [UserController::class, 'logout'])->name('logout');
     Route::post('/', [UserController::class, 'login'])->name('login');
-    Route::post('/newuser', [UserController::class, 'newUser']);
+    Route::post('/', [UserController::class, 'newUser'])->name('register');
 });
 
 // project CRUD
