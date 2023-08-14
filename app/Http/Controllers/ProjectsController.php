@@ -40,6 +40,6 @@ class ProjectsController extends Controller
     public function deleteProject(Project $project, Request $request){
         
         $project->delete();
-        return redirect('/admin')->with('success', "Le project $request->title supprimé ! ");
+        return redirect('/admin')->with('success', "Le project a bien été supprimé ! ");
     }
 }
