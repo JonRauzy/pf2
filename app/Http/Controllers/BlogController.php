@@ -10,6 +10,9 @@ class BlogController extends Controller
 {
     
     public function addBlog(Request $request){
+        
+        $request['slug'] = Str::slug($request['title'], '-');
+
         $data = $request->validate([
             'title'=>'required',
             'slug'=>'required',
@@ -17,7 +20,6 @@ class BlogController extends Controller
             'image_url'=>'required',
         ]);
 
-        $data['slug'] = Str::slug($data['title'], '-');
         
         Blog::create($data);
         return redirect('/admin')->with('success', 'Article de blog a bien été enregistré');
