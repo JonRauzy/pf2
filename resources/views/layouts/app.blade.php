@@ -12,7 +12,7 @@
     @vite('resources/js/app.js')
 </head>
 <body class="antialiased">
-    <nav class="p-12 space-x-12 max-w-full font-medium sticky top-0 bg-white w-screen">
+    <nav class="px-12 py-6 shadow-sm space-x-12 max-w-full font-medium sticky top-0 bg-white w-screen">
         <a href="/">Home</a>
         <a href="blog">Blog</a>
         <a href="contact">Contact</a>
