@@ -7,6 +7,7 @@
 {{-- body --}}
 @section('content')
 
+{{-- HERO --}}
 <div class="bg-red-600 max-w-full text-center pt-12 mb-24">
 
     <div class="text-center">
@@ -37,33 +38,41 @@
     </div>
 </div>
 
+{{-- ABOUT --}}
 <div class="mb-24">
     <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
     <p class="px-12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta magnam quam blanditiis, id, quia ullam, molestiae vero non beatae reiciendis voluptate facilis. Dolor sapiente, qui minus fuga ullam suscipit error fugit tenetur, architecto soluta nam, tempore laborum saepe dolores quo. Dignissimos dolore omnis eaque ullam autem iure quia totam adipisci mollitia et, placeat similique culpa sint, corporis optio eum suscipit enim nisi quos voluptatem libero dolorem officiis neque recusandae! Quo ipsum dolore adipisci debitis quia velit perspiciatis possimus quibusdam sequi doloremque deleniti voluptate dolores temporibus, inventore at. Iusto, id corrupti, quam blanditiis molestiae odit libero omnis veniam, soluta repellat a.</p>
 </div>
 
+{{-- PROJECT --}}
 <div class="mx-12 mb-24">
-    <h2 class="text-3xl font-bold text-center mb-6">Project : </h2>
+    <div class="text-center mb-3">
+        <h2 class="text-3xl font-bold mb-6">Project : </h2>
+        <p>Check out my latest projects : </p>
+    </div>
     @foreach ($projects as $project)
-    <div class="mb-24 bg-slate-300">
+    <div class="mb-1 bg-slate-100 even:bg-slate-300">
         <h3 class="text-bold text-center p-12 text-2xl">{{$project['title']}}</h3>
             <div class="grid grid-cols-2">
-                <p class="col-start-1 col-end-2 px-12 mb-6">{{$project['body']}}</p>
-                @php
-                    $stacks = explode('|||', $project['stack'])
-                @endphp
-                <ul class="col-start-1 col-end-2 px-24">
-                    @foreach ($stacks as $stack)
-                        <li>- {{$stack}}</li>    
-                    @endforeach
-                </ul>
-                <a href="{{$project['link_url']}}" target="blank" class="col-start-1 col-end-2 text-center my-12">Visit here : {{$project['link_url']}}</a>
-                <img src="{{$project['image_url']}}" alt="" width='500px' class="col-start-2 col-end-3 row-start-1 row-end-5 m-auto pb-12">
+                <div class="col-start-1 col-span-1">
+                    <p class="px-12 mb-6">{{$project['body']}}</p>
+                    @php
+                        $stacks = explode('|||', $project['stack'])
+                    @endphp
+                    <ul class="px-24">
+                        @foreach ($stacks as $stack)
+                            <li>- {{$stack}}</li>    
+                        @endforeach
+                    </ul>
+                    <a href="{{$project['link_url']}}" target="blank" class="text-center m-12">Visit here : {{$project['link_url']}}</a>
+                </div>
+                <img src="{{$project['image_url']}}" alt="" class="col-start-2 col-span-1 even:w-full row-start-1 row-end-5 m-auto pb-12">
             </div>
     </div>
     @endforeach
 </div>
 
+{{-- CONTACT --}}
 <div class="mb-24 w-1/2 m-auto">
     <h2 class="text-3xl font-bold text-center mb-6">Get in touch</h2>
     <form action="./contact" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
