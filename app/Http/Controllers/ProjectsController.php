@@ -13,7 +13,7 @@ class ProjectsController extends Controller
 
     public function addProject(Request $request){
 
-        $request['stack'] = Str::replace(' ', '|||', false);
+        $request['stack'] = Str::replace(' ', '|||', $request['stack']);
 
         $data = $request->validate([
             'title'=> 'required',

@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    font-family: 'roboto';
+}
+
+h1, h2, h3, a {
+    font-family: 'metrophobic';
+}
+
+a {
+    font-weight: bolder;
+}
