@@ -9,8 +9,7 @@
     @vite('resources/js/app.js')
 </head>
 <body class="antialiased">
-    <h1 class="text-3xl font-bold text-center">Jon Rauzy</h1>
-    <nav class="m-12 space-x-12 font-medium">
+    <nav class="p-12 space-x-12 font-medium sticky top-0 bg-white w-screen">
         <a href="/">Home</a>
         <a href="blog">Blog</a>
         <a href="" class="bg-red-500 p-5 hover:bg-red-800 hover:text-yellow-50">Contact</a>

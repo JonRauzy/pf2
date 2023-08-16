@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\Redirect;
 
 class ProjectsController extends Controller
 {
 
     public function addProject(Request $request){
+
+        $request['stack'] = Str::replace(' ', '|||', false);
+
         $data = $request->validate([
             'title'=> 'required',
             'body'=> 'required',
