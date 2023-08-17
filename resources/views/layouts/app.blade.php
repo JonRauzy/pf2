@@ -12,8 +12,8 @@
     @vite('resources/js/app.js')
 </head>
 
-<body class="antialiased">
-    <nav class="flex justify-between px-24 py-6 shadow-sm sticky top-0 bg-gray-100">
+<body class="antialiased bg-slate-50">
+    <nav class="flex justify-between pl-6 pr-12 md:px-24 py-6 shadow-sm sticky top-0 bg-slate-100">
         <button type="button" class="burger-btn md:hidden">Burger</button>
         <div class="menu hidden font-medium space-y-6 md:flex md:flex-row md:justify-between md:space-y-0 md:space-x-12 md:w-screen">
             <div class="md:flex flex-row md:space-x-10 space-y-6 md:space-y-0">
