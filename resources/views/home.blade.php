@@ -8,7 +8,7 @@
 @section('content')
 
 {{-- HERO --}}
-<div class="bg-red-600 max-w-full text-center pt-12 mb-24">
+<div class="bg-red-600 max-w-full text-center pt-6 mb-24">
 
     <div class="text-center">
         @if (session('success'))
@@ -20,12 +20,12 @@
         @endif
     </div>
     
-    <h1 class="text-3xl font-bold text-center">Jon Rauzy - Junior Web Developer</h1>
-    <div class="grid grid-cols-2">
-        <img src="https://yt3.googleusercontent.com/ytc/AOPolaTIysKiXg5baWK89JyRJfJL2YpjVOuaFMz60bKSNw=s900-c-k-c0x00ffffff-no-rj" class="w-10/12 px-12 pt-12">
+    <h1 class="text-3xl font-bold text-center my-6">Jon Rauzy - Junior Web Developer</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <img src="https://yt3.googleusercontent.com/ytc/AOPolaTIysKiXg5baWK89JyRJfJL2YpjVOuaFMz60bKSNw=s900-c-k-c0x00ffffff-no-rj" class="w-10/12 m-auto md:px-12:pt-12">
         <div class="flex flex-col place-content-center">
             <h3 class="text-3xl pb-12">Bringing quality code to your compagny mofo</h3>
-            <ul class="space-y-3">
+            <ul class="space-y-3 last:mb-12">
                 <li>Html</li>
                 <li>CSS</li>
                 <li>PHP</li>
@@ -45,35 +45,32 @@
 </div>
 
 {{-- PROJECT --}}
-<div class="mx-12 mb-24">
-    <div class="text-center mb-3">
-        <h2 class="text-3xl font-bold mb-6">Project : </h2>
-        <p>Check out my latest projects : </p>
-    </div>
+<div class="mx-3 md:mx-12 mb-24">
+    <h2 class="text-center text-3xl font-bold mb-6">Check out my latest projects</h2>
     @foreach ($projects as $project)
     <div class="mb-1 bg-slate-100 even:bg-slate-300">
         <h3 class="text-bold text-center p-12 text-2xl">{{$project['title']}}</h3>
-            <div class="grid grid-cols-2">
-                <div class="col-start-1 col-span-1">
-                    <p class="px-12 mb-6">{{$project['body']}}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="md:col-start-1:col-span-1 px-6 md:px-12">
+                    <p class="mb-6 text-justify">{{$project['body']}}</p>
                     @php
                         $stacks = explode('|||', $project['stack'])
                     @endphp
-                    <ul class="px-24">
+                    <ul class="px-24 mb-6">
                         @foreach ($stacks as $stack)
                             <li>- {{$stack}}</li>    
                         @endforeach
                     </ul>
-                    <a href="{{$project['link_url']}}" target="blank" class="text-center m-12">Visit here : {{$project['link_url']}}</a>
+                    <a href="{{$project['link_url']}}" target="blank" class="text-center">Visit here : {{$project['link_url']}}</a>
                 </div>
-                <img src="{{$project['image_url']}}" alt="" class="col-start-2 col-span-1 even:w-full row-start-1 row-end-5 m-auto pb-12">
+                <img src="{{$project['image_url']}}" class="md:col-start-2:col-span-1:row-start-1:row-end-5 m-auto pd-6 md:pb-12">
             </div>
     </div>
     @endforeach
 </div>
 
 {{-- CONTACT --}}
-<div class="mb-24 w-1/2 m-auto">
+<div class="mb-24 w-11/12 md:w-1/2 m-auto">
     <h2 class="text-3xl font-bold text-center mb-6">Get in touch</h2>
     <form action="./contact" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         @csrf
