@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 // Navigation
 Route::get('/', function () {
-    $projects = Project::all();
+    $projects = Project::all()->sortBy('id');
     return view('home', ['projects' => $projects]);
 });
 

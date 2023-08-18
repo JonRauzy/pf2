@@ -8,7 +8,7 @@
 @section('content')
 
 {{-- HERO --}}
-<div class="bg-gradient-to-r from-red-400  to-red-200 max-w-full text-center pt-6 mb-24">
+<div class="bg-gradient-to-r from-red-400 to-red-200 max-w-full text-center pt-6">
 
     <div class="text-center">
         @if (session('success'))
@@ -24,7 +24,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2">
         <img class="w-10/12 m-auto mb-12 md:px-12:pt-12 shadow-lg" src="https://img.freepik.com/photos-gratuite/portrait-homme-blanc-isole_53876-40306.jpg?w=2000">
         <div class="flex flex-col place-content-center">
-            <h3 class="text-5xl pb-6">Bringing quality code to your compagny</h3>
+            <h3 class="text-3xl md:text-5xl pb-6">Bringing quality code to your compagny</h3>
             <ul class="space-y-3 last:mb-12 text-xl">
                 <li>Html</li>
                 <li>CSS</li>
@@ -39,13 +39,15 @@
 </div>
 
 {{-- ABOUT --}}
-<div class="mb-24">
-    <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
-    <p class="px-12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta magnam quam blanditiis, id, quia ullam, molestiae vero non beatae reiciendis voluptate facilis. Dolor sapiente, qui minus fuga ullam suscipit error fugit tenetur, architecto soluta nam, tempore laborum saepe dolores quo. Dignissimos dolore omnis eaque ullam autem iure quia totam adipisci mollitia et, placeat similique culpa sint, corporis optio eum suscipit enim nisi quos voluptatem libero dolorem officiis neque recusandae! Quo ipsum dolore adipisci debitis quia velit perspiciatis possimus quibusdam sequi doloremque deleniti voluptate dolores temporibus, inventore at. Iusto, id corrupti, quam blanditiis molestiae odit libero omnis veniam, soluta repellat a.</p>
-</div>
+<section id="about" class="pt-24">
+    <div class="px-12">
+        <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
+        <p class="px-12">Hello, I'm Jon! A french living in Brussel for the past 10 years. I just graduate as a Web Developper from the <a href="https://www.cf2m.be/home">CF2M school</a> and now looking for an internship. Our cursus was heavily focus on vanilla PHP and MySQL for the back-end as well as HTML, CSS and vanilla JS for the front-end. We also dipped our toes into Symfony and Node by the end of the year. On the side I got myself into Laravel during my summer break to code this very portfolio and I loved it. Now I'm eager to practice my new skills and to learn even more! Don't hesitate to <a href="#contact">contact me</a> if you're hiring or if you need any more informations about me and the work i can provide. I'll be happy to answer you! Have a great day and thanks for visiting my humble website!</p>
+    </div>
+</section>
 
 {{-- PROJECT --}}
-<div class="mx-3 md:mx-12 mb-24">
+<div class="mx-3 md:mx-12 pt-24" id="project">
     <h2 class="text-center text-3xl font-bold mb-6">Check out my latest projects</h2>
     @foreach ($projects as $project)
     <div class="mb-1 bg-slate-200 even:bg-slate-300 shadow-md">
@@ -61,16 +63,25 @@
                             <li>- {{$stack}}</li>    
                         @endforeach
                     </ul>
-                    <a href="{{$project['link_url']}}" target="blank" class="text-center">Visit here : {{$project['link_url']}}</a>
+                    <div class="grid grid-cols-2 grid-rows-1 md:px-24">
+                        <div class="text-center col-start-1 col-span-1 row-start-1 row-span-1">
+                            <p class="bold">Visit here :</p>
+                            <a href="{{$project['link_url']}}" target="blank" class="bold"><i class="fa-solid fa-globe text-5xl"></i><a>
+                        </div>
+                        <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
+                            <p class="bold">Source code :</p>
+                            <a href="{{$project['link_url']}}" target="blank" class="bold"><i class="fa-brands fa-github text-5xl"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <img src="{{$project['image_url']}}" class="md:col-start-2:col-span-1:row-start-1:row-end-5 m-auto pd-6 md:pb-12">
+                <img src="{{asset($project['image_url'])}}" class="md:col-start-2:col-span-1:row-start-1:row-end-5 w-11/12 m-auto pd-6 md:pb-12">
             </div>
     </div>
     @endforeach
 </div>
 
 {{-- CONTACT --}}
-<div class="mb-24 w-11/12 md:w-1/2 m-auto">
+<div class="mb-24 w-11/12 md:w-1/2 m-auto pt-24" id="contact">
     <h2 class="text-3xl font-bold text-center mb-6">Get in touch</h2>
     <form action="./contact" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         @csrf
