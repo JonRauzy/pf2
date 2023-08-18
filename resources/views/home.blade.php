@@ -51,7 +51,7 @@
     <h2 class="text-center text-3xl font-bold mb-6">Check out my latest projects</h2>
     @foreach ($projects as $project)
     <div class="mb-1 bg-slate-200 even:bg-slate-300 shadow-md">
-        <h3 class="text-bold text-center p-12 text-2xl">{{$project['title']}}</h3>
+        <h3 class="bold text-center p-12 text-2xl font-bold">{{$project['title']}}</h3>
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="md:col-start-1:col-span-1 px-6 md:px-12">
                     <p class="mb-6 text-justify">{{$project['body']}}</p>
@@ -63,14 +63,14 @@
                             <li>- {{$stack}}</li>    
                         @endforeach
                     </ul>
-                    <div class="grid grid-cols-2 grid-rows-1 md:px-24">
+                    <div class="grid grid-cols-2 grid-rows-1 md:px-24 pb-12 md:pb-0">
                         <div class="text-center col-start-1 col-span-1 row-start-1 row-span-1">
-                            <p class="bold">Visit here :</p>
-                            <a href="{{$project['link_url']}}" target="blank" class="bold"><i class="fa-solid fa-globe text-5xl"></i><a>
+                            <p class="p-3">Visit here :</p>
+                            <a href="{{$project['link_url']}}" target="blank"><i class="fa-solid fa-globe text-5xl"></i></a>
                         </div>
                         <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
-                            <p class="bold">Source code :</p>
-                            <a href="{{$project['link_url']}}" target="blank" class="bold"><i class="fa-brands fa-github text-5xl"></i></a>
+                            <p class="p-3">Source code :</p>
+                            <a href="{{$project['link_url']}}" target="blank"><i class="fa-brands fa-github text-5xl"></i></a>
                         </div>
                     </div>
                 </div>
