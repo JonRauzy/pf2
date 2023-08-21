@@ -22,7 +22,7 @@
     
     <h1 class="text-4xl md:text-5xl font-bold text-center my-6 md:mb-12">Jon Rauzy - Web Developer Junior </h1>
     <div class="grid grid-cols-1 md:grid-cols-2">
-        <img class="w-10/12 m-auto mb-12 md:px-12:pt-12 shadow-lg" src="https://img.freepik.com/photos-gratuite/portrait-homme-blanc-isole_53876-40306.jpg?w=2000">
+        <img class="w-9/12 m-auto mb-12 md:px-12:pt-12 shadow-lg" src="{{asset('asset/img/portrait1.jpg')}}">
         <div class="flex flex-col place-content-center">
             <h3 class="text-3xl md:text-5xl pb-6">Bringing quality code to your compagny</h3>
             <ul class="space-y-3 last:mb-12 text-xl">
@@ -51,12 +51,12 @@
     <h2 class="text-center text-3xl font-bold mb-6">Check out my latest projects</h2>
     @foreach ($projects as $project)
     <div class="mb-1 bg-slate-200 even:bg-slate-300 shadow-md">
-        <h3 class="bold text-center p-12 text-2xl font-bold">{{$project['title']}}</h3>
+        <h3 class="bold text-center p-12 text-2xl font-bold">{{$project->title}}</h3>
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="md:col-start-1:col-span-1 px-6 md:px-12">
-                    <p class="mb-6 text-justify">{{$project['body']}}</p>
+                    <p class="mb-6 text-justify">{{$project->body}}</p>
                     @php
-                        $stacks = explode('|||', $project['stack'])
+                        $stacks = explode('|||', $project->stack)
                     @endphp
                     <ul class="px-24 mb-6">
                         @foreach ($stacks as $stack)
@@ -66,15 +66,15 @@
                     <div class="grid grid-cols-2 grid-rows-1 md:px-24 pb-12 md:pb-0">
                         <div class="text-center col-start-1 col-span-1 row-start-1 row-span-1">
                             <p class="p-3">Visit here :</p>
-                            <a href="{{$project['link_url']}}" target="blank"><i class="fa-solid fa-globe text-5xl"></i></a>
+                            <a href="{{$project->link_url}}" target="blank"><i class="fa-solid fa-globe text-5xl"></i></a>
                         </div>
                         <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
                             <p class="p-3">Source code :</p>
-                            <a href="{{$project['link_url']}}" target="blank"><i class="fa-brands fa-github text-5xl"></i></a>
+                            <a href="{{$project->link_url}}" target="blank"><i class="fa-brands fa-github text-5xl"></i></a>
                         </div>
                     </div>
                 </div>
-                <img src="{{asset($project['image_url'])}}" class="md:col-start-2:col-span-1:row-start-1:row-end-5 w-11/12 m-auto pd-6 md:pb-12">
+                <img src="{{asset($project->image_url)}}" class="md:col-start-2:col-span-1:row-start-1:row-end-5 w-11/12 m-auto pd-6 md:pb-12">
             </div>
     </div>
     @endforeach
