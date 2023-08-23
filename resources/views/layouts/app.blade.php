@@ -22,15 +22,17 @@
                 <a href="/" class="block">Home</a>
                 <a href="#about" class="block">About</a>
                 <a href="#project" class="block">Projects</a>
+                <a href="#contact" class="block">Contact</a>
             </div>
             <div class="md:flex flex-row md:space-x-10 space-y-6 md:space-y-0">
                 <a href="blog" class="block">Blog</a>
-                <a href="#contact" class="block">Contact</a>
             </div>
         </div>
     </nav>
     
     @yield('content')
+
+    <button class="fixed bottom-5 right-5 bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></button>
 
     <footer class="text-center">
         <p>Copyright : Jon Rauzy - {{date('Y')}}</p>
