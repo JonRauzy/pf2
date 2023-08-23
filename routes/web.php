@@ -21,7 +21,7 @@ use App\Http\Controllers\ProjectsController;
 
 // Navigation
 Route::get('/', function () {
-    $projects = Project::all()->sortBy('id');
+    $projects = Project::all()->sortByDesc('id');
     return view('home', ['projects' => $projects]);
 });
 
