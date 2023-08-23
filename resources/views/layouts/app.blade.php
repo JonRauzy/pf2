@@ -15,16 +15,11 @@
 </head>
 
 <body class="antialiased bg-slate-50">
-    <nav class="flex justify-between pl-6 pr-12 md:px-24 py-6 shadow-sm sticky top-0 bg-slate-100">
-        <button type="button" class="burger-btn md:hidden">Burger</button>
-        <div class="menu hidden font-medium space-y-6 md:flex md:flex-row md:justify-between md:space-y-0 md:space-x-12 md:w-screen">
-            <div class="md:flex flex-row md:space-x-10 space-y-6 md:space-y-0">
+    <nav class="flex justify-end md:justify-between md:px-24 py-6 px-6 shadow-sm bg-slate-100">
+        <div class="pr-4 md:pr-0">
+            <button type="button" class="burger-btn md:hidden">Burger</button>
+            <div class="menu hidden font-medium mt-6 md:mt-0 space-y-6 md:flex md:flex-row md:space-y-0 md:space-x-12 md:w-screen">
                 <a href="/" class="block">Home</a>
-                <a href="#about" class="block">About</a>
-                <a href="#project" class="block">Projects</a>
-                <a href="#contact" class="block">Contact</a>
-            </div>
-            <div class="md:flex flex-row md:space-x-10 space-y-6 md:space-y-0">
                 <a href="blog" class="block">Blog</a>
             </div>
         </div>

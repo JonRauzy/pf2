@@ -8,8 +8,12 @@
 @section('content')
 
 {{-- HERO --}}
-<div class="bg-gradient-to-r from-red-400 to-red-200 max-w-full text-center pt-6">
-
+<nav class="md:px-36 py-6 pl-3 fixed md:w-1/2 top-0 md:right-0 flex flex-row-reverse gap-8 md:bg-gradient-to-r from-transparent via-red-100 to-red-200">
+    <a href="#contact" class="block">Contact</a>
+    <a href="#project" class="block">Projects</a>
+    <a href="#about" class="block">About</a>
+</nav>
+<div class="bg-gradient-to-r from-red-400 to-red-200 max-w-full text-center pt-24">
     <div class="text-center">
         @if (session('success'))
             <h4 class="text-3xl">{{ session('success') }}</h4>
@@ -40,6 +44,7 @@
 
 {{-- ABOUT --}}
 <section id="about" class="pt-24">
+
     <div class="md:px-12">
         <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
         <p class="px-12">Hello, I'm Jon! A french living in Brussel for the past 10 years. I just graduate as a Web Developper from the <a href="https://www.cf2m.be/home">CF2M school</a> and now looking for an internship. Our cursus was heavily focus on vanilla PHP and MySQL for the back-end as well as HTML, CSS and vanilla JS for the front-end. We also dipped our toes into Symfony and Node by the end of the year. On the side I got myself into Laravel during my summer break to code this very portfolio and I loved it. Now I'm eager to practice my new skills and to learn even more! Don't hesitate to <a href="#contact">contact me</a> if you're hiring or if you need any more informations about me and the work i can provide. I'll be happy to answer you! Have a great day and thanks for visiting my humble website!</p>
