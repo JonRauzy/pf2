@@ -66,11 +66,11 @@
                     <div class="grid grid-cols-2 grid-rows-1 lg:px-24 pb-6">
                         <div class="text-center col-start-1 col-span-1 row-start-1 row-span-1">
                             <p class="p-3">Visit here :</p>
-                            <a href="{{$project->link_url}}" target="blank"><i class="fa-solid fa-globe text-5xl text-gray-700 hover:text-black"></i></a>
+                            <a href="{{$project->link_url}}" target="blank"><i class="fa-solid fa-globe text-5xl text-gray-800 hover:text-black"></i></a>
                         </div>
                         <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
                             <p class="p-3 text-gray-600">Source code :</p>
-                            <a href="{{$project->link_url}}" target="blank"><i class="fa-brands fa-github text-5xl text-gray-700 hover:text-black"></i></a>
+                            <a href="{{$project->link_url}}" target="blank"><i class="fa-brands fa-github text-5xl text-gray-800 hover:text-black"></i></a>
                         </div>
                     </div>
                 </div>
@@ -88,8 +88,8 @@
         <div class="flex flex-col space-y-2">
             <input type="text" name="name" placeholder="Your name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
             <input type="text" name="email" placeholder="Your e-mail adress" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
-            <textarea name="message" placeholder="Your message..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea> 
-            <button type="submit" class="bg-gray-500 hover:bg-gray-700 hover:cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send</button> 
+            <textarea name="message" placeholder="Your message..." class="shadow appearance-none border rounded w-full h-48 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea> 
+            <button type="submit" class="bg-red-500 hover:bg-red-600 hover:cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send</button> 
         </div>
     </form>
 </div>
