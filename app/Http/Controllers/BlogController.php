@@ -10,19 +10,16 @@ class BlogController extends Controller
 {
     
     public function addBlog(Request $request){
-        
         $request['slug'] = Str::slug($request['title'], '-');
-
         $data = $request->validate([
             'title'=>'required',
             'slug'=>'required',
             'body'=>'required',
             'image_url'=>'required',
         ]);
-
         
-        Blog::create($data);
-        return redirect('/admin')->with('success', 'Article de blog a bien été enregistré');
+        $blog = Blog::create($data);
+        return redirect('/admin')->with('success', "l'article $blog->title a bien été enregistré");
     }
 
 
@@ -35,7 +32,7 @@ class BlogController extends Controller
         ]);
 
         $blog -> update($data);
-        return redirect('/admin')->with('success', "Le blog $blog->title a bien été mis à jour");
+        return redirect('/admin')->with('success', "L'article $blog->title a bien été mis à jour");
     }
 
     

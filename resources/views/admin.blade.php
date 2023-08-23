@@ -76,7 +76,7 @@
                 <input type="text" name="title" placeholder="titre du blog" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
                 <textarea name="body" placeholder="texte du blog" class="shadow appearance-none border rounded w-full h-48 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea> 
                 <input type="text" name="image_url" placeholder="photo du blog" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
-                <input type="submit" value="Enregistrer" class="bg-gray-500 hover:bg-gray-700 hover:cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> 
+                <input type="submit" value="Enregistrer" class="bg-red-500 hover:bg-red-600 hover:cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> 
             </div>
         </form>
     </div>
@@ -108,14 +108,16 @@
 
     @else
         {{-- connexion form --}}
-        <form action="{{ route('user.login') }}" method="POST" class="grid place-content-center mb-11">
-            @csrf
-            <div class="flex flex-col space-y-2">
-                <input type="text" name="name" id="name" placeholder="name" class="border border-black">
-                <input type="password" name="password" id="password" placeholder="password" class="border border-black">
-                <input type="submit" value="Enter" class="border border-black">
-            </div>
-        </form>
+        <div  class="w-1/2 m-auto place-content-center mt-24">
+            <form action="{{ route('user.login') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                @csrf
+                <div class="flex flex-col space-y-2">
+                    <input type="text" name="name" placeholder="Login name" class="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                    <input type="password" name="password" placeholder="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                    <input type="submit" value="Login" class="bg-red-500 hover:bg-red-600 hover:cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> 
+                </div>
+            </form>
+        </div>
 
     @endauth
 

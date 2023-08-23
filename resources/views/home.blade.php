@@ -25,7 +25,7 @@
         <img class="w-9/12 m-auto mb-12 md:px-12:pt-12 shadow-lg" src="{{asset('asset/img/portrait1.jpg')}}">
         <div class="flex flex-col place-content-center">
             <h3 class="text-3xl md:text-5xl pb-6">Bringing quality code to your compagny</h3>
-            <ul class="space-y-3 last:mb-12 text-xl">
+            <ul class="space-y-3 last:mb-12 text-xl text-gray-600">
                 <li>Html</li>
                 <li>CSS</li>
                 <li>PHP</li>
@@ -52,29 +52,29 @@
     @foreach ($projects as $project)
     <div class="mb-1 bg-slate-200 even:bg-slate-300 shadow-md">
         <h3 class="bold text-center p-12 text-2xl font-bold">{{$project->title}}</h3>
-            <div class="grid md:grid-cols-2">
-                <div class="md:col-start-1:col-span-1 px-6 md:px-12">
-                    <p class="mb-6 text-justify">{{$project->body}}</p>
+            <div class="grid lg:grid-cols-2">
+                <div class="lg:col-start-1:col-span-1 px-6 lg:px-12">
+                    <p class="mb-6 text-justify text-gray-600">{{$project->body}}</p>
                     @php
                         $stacks = explode('|||', $project->stack)
                     @endphp
-                    <ul class="px-24 mb-6">
+                    <ul class="px-24 mb-6 text-gray-600">
                         @foreach ($stacks as $stack)
                             <li>- {{$stack}}</li>    
                         @endforeach
                     </ul>
-                    <div class="grid grid-cols-2 grid-rows-1 md:px-24 pb-12 md:pb-0">
+                    <div class="grid grid-cols-2 grid-rows-1 lg:px-24 pb-6">
                         <div class="text-center col-start-1 col-span-1 row-start-1 row-span-1">
                             <p class="p-3">Visit here :</p>
-                            <a href="{{$project->link_url}}" target="blank"><i class="fa-solid fa-globe text-5xl"></i></a>
+                            <a href="{{$project->link_url}}" target="blank"><i class="fa-solid fa-globe text-5xl text-gray-700 hover:text-black"></i></a>
                         </div>
                         <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
-                            <p class="p-3">Source code :</p>
-                            <a href="{{$project->link_url}}" target="blank"><i class="fa-brands fa-github text-5xl"></i></a>
+                            <p class="p-3 text-gray-600">Source code :</p>
+                            <a href="{{$project->link_url}}" target="blank"><i class="fa-brands fa-github text-5xl text-gray-700 hover:text-black"></i></a>
                         </div>
                     </div>
                 </div>
-                <img src="{{asset($project->image_url)}}" class="md:col-start-2:col-span-1:row-start-1:row-end-5 w-11/12 m-auto pd-6 md:pb-12">
+                <img src="{{asset($project->image_url)}}" class="lg:col-start-2:col-span-1:row-start-1:row-end-5 w-11/12 m-auto pd-6 lg:pb-12">
             </div>
     </div>
     @endforeach
