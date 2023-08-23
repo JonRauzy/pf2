@@ -12,8 +12,8 @@
     </div>
 </div>
 
-<div class="w-11/12 md:w-3/4 m-auto bg-white px-24 pb-24 mb-12">
-    <h3 class="text-3xl font-bold text-center py-12">{{ $blog->title }} : </h3>
+<div class="w-11/12 md:w-3/4 m-auto bg-white px-2 md:px-24 pb-24 mb-12">
+    <h3 class="text-2xl font-bold text-center py-12">{{ $blog->title }} : </h3>
     <img src="{{ $blog->image_url }}" class="w-full">
     <div class="even:bg-slate-200 md:px-3">
         <p class="w-full font-thin text-justify md:pr-3 text-gray-600">{{ $blog->body }}</p>

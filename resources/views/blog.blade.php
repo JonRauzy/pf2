@@ -13,14 +13,14 @@
 </div>
 
 <div class="w-11/12 md:w-1/2 m-auto">
-    <h3 class="text-3xl font-bold text-center py-12">Here's our latest articles : </h3>
+    <h3 class="text-2xl font-bold text-center py-12">Here's our latest articles : </h3>
     @foreach ($blogs as $blog)
     <div class="even:bg-slate-200 md:px-3 shadow-md">
         <a href="blog/{{ $blog->id }}" >
             <div class="grid grid-cols-3 mb-6">
                 <div class="col-span-2">
                     <h3 class="text-lg md:text-2xl">{{ $blog->title }}</h3>
-                    <p class="font-thin text-justify md:pr-3 text-gray-600">{{ Str::limit($blog->body, 100) }}</p>
+                    <p class="font-thin text-justify pr-2 text-gray-600">{{ Str::limit($blog->body, 100) }}</p>
                     <p class="font-thin hover:text-gray-500">Read more...</p>
                     <p class="font-thin">{{ $blog->created_at}}</p>
                 </div>

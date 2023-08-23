@@ -108,7 +108,7 @@
 
     @else
         {{-- connexion form --}}
-        <div  class="w-1/2 m-auto place-content-center mt-24">
+        <div  class="w-11/12 md:w-1/2 m-auto place-content-center mt-24">
             <form action="{{ route('user.login') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 @csrf
                 <div class="flex flex-col space-y-2">
