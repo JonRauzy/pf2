@@ -5,15 +5,15 @@
 @section('content')
 
     @if (session('success'))
-        {{session('success')}}
+       <p class="text-center text-2xl font-bold mt-6">{{session('success')}}</p> 
     @endif
 
     @auth
 
-    <h2>Salut {{ $name }}</h2>
+    <h3 class="mt-6 mb-12 text-center text-xl">Bienvenue chez toi {{ $name }} ! </h3>
 
     {{-- CRUD --}}
-    <h2 class="m-12 text-center font-bold text-2xl">Projects</h2>
+    <h2 class="mb-12 mt-6 text-center font-bold text-2xl">Projects</h2>
     <div  class="w-8/12 m-auto place-content-center">
         <form action="./add-project" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf
@@ -28,7 +28,6 @@
             </div>
         </form>
     </div>
-
 
     <table class="bg-white shadow-md m-9">
         <tr>
@@ -69,7 +68,7 @@
         @endforeach
     </table>
 
-    <hr>
+    <hr class="mb-24">
 
     <h2 class="m-12 text-center font-bold text-2xl">Blog</h2>
     <div  class="w-3/4 m-auto place-content-center">
