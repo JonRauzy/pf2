@@ -75,7 +75,7 @@
                         </div>
                         <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
                             <p class="p-3 text-gray-600">Source code :</p>
-                            <a href="{{$project->link_url}}" target="blank"><i class="fa-brands fa-github text-5xl text-gray-800 hover:text-black"></i></a>
+                            <a href="{{$project->source}}" target="blank"><i class="fa-brands fa-github text-5xl text-gray-800 hover:text-black"></i></a>
                         </div>
                     </div>
                 </div>

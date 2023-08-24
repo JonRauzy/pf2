@@ -22,6 +22,7 @@
                 <textarea name="body" placeholder="description" class="shadow appearance-none border rounded w-full py-2 h-48 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea> 
                 <input type="text" name="stack" placeholder="stack" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
                 <input type="text" name="link_url" placeholder="Url" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                <input type="text" name="source" placeholder="Source code url" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
                 <input type="text" name="image_url" placeholder="photo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
                 <input type="submit" value="Enregistrer" class="bg-red-500 hover:bg-red-600 hover:cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> 
             </div>
@@ -35,6 +36,7 @@
             <th class="">Body</th>
             <th class="">Stack</th>
             <th class="">Link url</th>
+            <th class="">source code url</th>
             <th class="">Image url</th>
             <th class=""></th>
             <th class=""></th>
@@ -42,7 +44,7 @@
         @foreach ($projects as $project)
             <tr class="even:bg-gray-100 odd:bg-white">
                 <td class="border border-black px-3">{{ $project->title }}</td>
-                <td class="border border-black pl-3 ">{{ $project->body }}</td>
+                <td class="border border-black pl-3 w-72">{{ $project->body }}</td>
                 <td class="border border-black px-3">
                 @php
                     $stacks = explode('|||', $project->stack);
@@ -55,6 +57,7 @@
                     </ul>
                 </td>
                 <td class="border border-black px-3">{{ $project->link_url }}</td>
+                <td class="border border-black px-3">{{ $project->source }}</td>
                 <td class="border border-black px-3">{{ $project->image_url }}</td>
                 <td class="border border-black px-3" ><button><a href="edit-project/{{ $project->id }}">Update</a></button></td>
                 <td class="border border-black px-3" ><form action="/delete-project/{{ $project->id }}" method="POST">

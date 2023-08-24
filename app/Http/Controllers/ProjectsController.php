@@ -21,6 +21,7 @@ class ProjectsController extends Controller
             'stack'=> 'required',
             'link_url'=> 'required',
             'image_url'=> 'required',
+            'source' => 'required',
         ]);
 
         Project::create($data);
@@ -35,6 +36,7 @@ class ProjectsController extends Controller
             'stack'=> 'required',
             'link_url'=> 'required',
             'image_url'=> 'required',
+            'source' => 'required',
         ]);
 
         $project->update($data);
