@@ -53,24 +53,24 @@
 
 {{-- PROJECT --}}
 <div class="mx-3 md:mx-12 pt-24" id="project">
-    <h2 class="text-center text-3xl font-bold mb-6">Check out my latest projects</h2>
+    <h2 class="text-center text-3xl font-bold lg:mb-6 mb-3">Check out my latest projects</h2>
     @foreach ($projects as $project)
     <div class="mb-1 bg-slate-200 even:bg-slate-300 shadow-md">
         <h3 class="bold text-center p-12 text-2xl font-bold">{{$project->title}}</h3>
-        <div class="grid grid-rows-4 lg:grid-rows-1 lg:grid-cols-2">
-            <div class="row-start-2 row-span-3 lg:col-start-1:col-span-1 lg:row-span-1 px-6 lg:px-12">
-                <p class="mb-6 text-justify text-gray-600">{{$project->body}}</p>
+        <div class="flex lg:flex-row flex-col-reverse relative">
+            <div>
+                <p class="mb-6 px-3 lg:px-12 text-justify text-gray-600">{{$project->body}}</p>
                 @php
                     $stacks = explode('|||', $project->stack)
                 @endphp
-                <ul class="px-24 mb-6 text-gray-600">
+                <ul class="px-24 mb-36 text-gray-600">
                     @foreach ($stacks as $stack)
                         <li>- {{$stack}}</li>    
                     @endforeach
                 </ul>
-                <div class="grid grid-cols-2 grid-rows-1 lg:px-24 pb-6">
+                <div class="grid grid-cols-2 grid-rows-1 absolute inset-x-0 bottom-0 lg:w-1/2 mt-24 lg:px-24 pb-6">
                     <div class="text-center col-start-1 col-span-1 row-start-1 row-span-1">
-                        <p class="p-3">Visit here :</p>
+                        <p class="p-3 text-gray-600">Visit here :</p>
                         <a href="{{$project->link_url}}" target="blank"><i class="fa-solid fa-globe text-5xl text-gray-800 hover:text-black"></i></a>
                     </div>
                     <div class="text-center col-start-2 col-span-1 row-start-1 row-span-1"">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <img src="{{asset($project->image_url)}}" class="row-start-1 row-span-1 lg:col-start-2:col-span-1:row-span-1 w-11/12 m-auto pd-6 lg:pb-12">
+            <img src="{{asset($project->image_url)}}" class="m-auto lg:w-1/2 w-full mb-3 lg:mb-6">
         </div>
     </div>
     @endforeach
