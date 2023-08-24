@@ -20,7 +20,7 @@
             <button type="button" class="burger-btn md:hidden">Burger</button>
             <div class="menu hidden font-medium mt-6 md:mt-0 space-y-6 md:flex md:flex-row md:space-y-0 md:space-x-12 md:max-w-screen">
                 <a href="/" class="block">Home</a>
-                <a href="blog" class="block">Blog</a>
+                <a href="/blog" class="block">Blog</a>
             </div>
         </div>
     </nav>
