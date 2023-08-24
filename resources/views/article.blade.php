@@ -4,6 +4,8 @@
 
 @section('content')
 
+<button class="fixed top-5 left-5 border border-white bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><a href="/blog"><i class="fa-solid fa-arrow-left"></i></a></button>
+
 <div class="max-w-screen h-96 mb-12">
     <div class="w-full h-full bg-gradient-to-r from-red-400 to-red-200 flex justify-center items-center flex-col">
         <h2 class="text-4xl font-bold text-center mb-6">Jon's blog</h2>

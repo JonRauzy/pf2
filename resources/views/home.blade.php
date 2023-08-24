@@ -8,10 +8,10 @@
 @section('content')
 
 {{-- HERO --}}
-<nav class="md:px-36 py-6 pl-3 fixed md:w-1/2 top-0 md:right-0 flex flex-row-reverse gap-8 md:bg-gradient-to-r from-transparent via-red-100 to-red-200">
-    <a href="#contact" class="block">Contact</a>
-    <a href="#project" class="block">Projects</a>
-    <a href="#about" class="block">About</a>
+<nav class="z-10 md:px-36 py-6 pl-3 fixed md:w-1/2 top-0 md:right-0 flex flex-row-reverse gap-8 md:bg-gradient-to-r from-transparent via-red-100 to-red-200 text-gray-800">
+    <a href="#contact" class="block hover:text-black">Contact</a>
+    <a href="#project" class="block hover:text-black">Projects</a>
+    <a href="#about" class="block hover:text-black">About</a>
 </nav>
 <div class="bg-gradient-to-r from-red-400 to-red-200 max-w-full text-center pt-24">
     <div class="text-center">

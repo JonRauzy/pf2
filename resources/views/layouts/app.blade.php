@@ -25,24 +25,24 @@
                     <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                 </svg>
             </button>
-            <div class="p-4"></div>
-            <div class="menu hidden font-medium mt-3 mr-6 md:mr-0 md:mt-0 space-y-6 md:flex md:flex-row md:space-y-0 md:space-x-12 md:max-w-screen">
-                <a href="/" class="block"><i class="fa fa-home" aria-hidden="true"></i></a>
-                <a href="/blog" class="block">Blog</a>
+            <div class="p-4 md:p-0"></div>
+            <div class="menu hidden font-medium mt-3 mr-6 md:mr-0 md:mt-0 space-y-6 md:flex md:flex-row md:space-y-0 md:space-x-12 md:max-w-screen text-gray-700">
+                <a href="/" class="block hover:text-black"><i class="fa fa-home" aria-hidden="true"></i></a>
+                <a href="/blog" class="block hover:text-black">Blog</a>
             </div>
         </div>
     </nav>
     
     @yield('content')
 
-    <button class="fixed bottom-5 right-5 bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></button>
+    <button class="fixed bottom-5 right-5 border border-white bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></button>
 
     <footer class="text-center bg-slate-100">
         <p class="pt-6">Copyright &copy; Jon Rauzy - {{date('Y')}}</p>
-        <div class="space-x-12 py-6  text-3xl">
-            <a href="admin"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+        <div class="space-x-12 py-6 text-3xl text-gray-700">
+            <a href="admin"><i class="fa-solid fa-screwdriver-wrench hover:text-black"></i></a>
             @auth
-                <a href="{{ route('user.logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="{{ route('user.logout') }}"><i class="fa-solid fa-right-from-bracket hover:text-black"></i></a>
             @endauth
         </div>
     </footer>
