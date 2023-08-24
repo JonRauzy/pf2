@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ProjectsController;
-use App\Http\Controllers\UserController;
 use App\Models\Blog;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProjectsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 // Navigation
 Route::get('/', function () {
-    $projects = Project::all();
+    $projects = Project::all()->sortByDesc('id');
     return view('home', ['projects' => $projects]);
 });
 
@@ -38,16 +38,18 @@ Route::get('/admin', function() {
     }else{
         return view('admin');
     }
-});
+})->name('admin');
 
 // connection + registrer
-Route::get('/logout', [UserController::class, 'logout']);
-Route::post('/login', [UserController::class, 'login']);
-Route::post('/newuser', [UserController::class, 'newUser']);
+Route::prefix('user')->name('user.')->group( function(){
+    Route::get('/', [UserController::class, 'logout'])->name('logout');
+    Route::post('/', [UserController::class, 'login'])->name('login');
+    Route::post('/register', [UserController::class, 'newUser'])->name('register');
+});
 
 // project CRUD
 Route::post('add-project', [ProjectsController::class, 'addProject']);
-Route::get('edit-project/{project}', function(Project $project){
+Route::get('/edit-project/{project}', function(Project $project){
     return view('edit-project', ['project'=>$project]);
 });
 Route::put('send-edited-project/{project}', [ProjectsController::class, 'editProject']);
@@ -57,6 +59,9 @@ Route::delete('delete-project/{project}', [ProjectsController::class, 'deletePro
 Route::post('add-blog', [BlogController::class, 'addBlog']);
 Route::get('edit-blog/{blog}', function(Blog $blog){
     return view('edit-blog', ['blog'=>$blog]);
+});
+Route::get('blog/{blog}', function(Blog $blog){
+    return view('article', ['blog'=>$blog]);
 });
 Route::put('send-edited-blog/{blog}', [BlogController::class, 'editBlog']);
 Route::delete('delete-blog/{blog}', [BlogController::class, 'deleteBlog']);

@@ -33,9 +33,9 @@ class UserController extends Controller
         ]);
 
         if(Auth::attempt($data)){
-            return redirect('./')->with('success', "Bonjour $request->name ! ");
+            return redirect('/admin')->with('success', "Vous êtes bien connecté ! ");
         } else {
-            return redirect('./')->with('success', "Erreur, tentative de connexion echouée");
+            return redirect('/admin')->with('success', "Erreur, tentative de connexion echouée");
         }
 
     }
