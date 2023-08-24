@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -39,6 +40,12 @@ class BlogController extends Controller
     public function deleteBlog(Blog $blog, Request $request){
         $blog -> delete();
         return redirect('admin')->with('success', "Le blog a bien été supprimé ! ");
+    }
+
+    public function showBlog(){
+        $blogs = Blog::all();
+        $trends = Blog::trendingArticles();
+        return view('blog', ['blogs'=> $blogs, 'trends'=> $trends ]);
     }
 
 }

@@ -25,10 +25,7 @@ Route::get('/', function () {
     return view('home', ['projects' => $projects]);
 });
 
-Route::get('/blog', function (){
-    $blogs = Blog::all();
-    return view('blog', ['blogs' => $blogs]);
-});
+Route::get('/blog', [BlogController::class, 'showBlog']);
 
 Route::get('/admin', function() {
     if(Auth::check()){
