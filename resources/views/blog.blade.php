@@ -12,9 +12,9 @@
     </div>
 </div>
 
-<main class="w-screen flex flex-col-reverse lg:gap-8 lg:justify-center lg:flex-row">
+<main class="max-w-screen flex flex-col-reverse lg:gap-8 lg:justify-center lg:flex-row">
     <section class="w-11/12 md:w-1/2 m-auto lg:m-0">
-        <h3 class="text-2xl font-bold text-center py-12">Here's our latest articles : </h3>
+        <h3 class="text-2xl font-bold text-center pt-12 pb-6 lg:py-12">Here's our latest articles : </h3>
         @foreach ($blogs as $blog)
         <div class="even:bg-slate-200 odd:bg-slate-100 md:px-3">
             <a href="blog/{{ $blog->id }}" >
@@ -32,8 +32,8 @@
         @endforeach
     </section>
     <section class="max-w-screen lg:w-1/6">
-        <h3 class="text-2xl font-bold text-center py-12">Trending articles : </h3>
-        <div class="w-full flex flex-row lg:flex-col bg-white">
+        <h3 class="text-2xl font-bold text-center py-6 lg:py-12">Trending articles : </h3>
+        <div class="w-full flex flex-row gap-1 px-1 lg:gap-0 lg:flex-col bg-white">
         @foreach ($trends as $trend)
             <a href="blog/{{ $trend->id }}" class="flex flex-col lg:block lg:mb-12 justify-between">
                 <h3 class="text-sm md:text-lg text-center">{{ $trend->title }}</h3>
