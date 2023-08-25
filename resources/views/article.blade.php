@@ -4,15 +4,9 @@
 
 @section('content')
 
-<button class="fixed top-5 left-5"><a href="/blog" class="border border-white bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><i class="fa-solid fa-arrow-left"></i></a></button>
+@include('layouts.blog-head')
 
-<div class="max-w-screen h-96 mb-12">
-    <div class="w-full h-full bg-gradient-to-r from-red-400 to-red-200 flex justify-center items-center flex-col">
-        <h2 class="text-4xl font-bold text-center mb-6">Jon's blog</h2>
-        <p class="text-justify px-3 text-gray-600">Here's my biggest collection of unasked and uninformed opinions about stuff you shouldn't care about or certainly already knows how to do.</p>
-        <p class="text-gray-600">Enjoy !</p>
-    </div>
-</div>
+<button class="fixed top-5 left-5"><a href="/blog" class="border border-white bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><i class="fa-solid fa-arrow-left"></i></a></button>
 
 <div class="w-11/12 md:w-3/4 m-auto bg-white px-2 md:px-24 pb-24 mb-12">
     <h3 class="text-2xl font-bold text-center py-12">{{ $blog->title }} : </h3>
