@@ -43,7 +43,7 @@
         @foreach ($projects as $project)
             <tr class="even:bg-gray-100 odd:bg-white">
                 <td class="border border-black px-3">{{ $project->title }}</td>
-                <td class="border border-black pl-3 w-72">{{ $project->body }}</td>
+                <td class="border border-black px-3">{{ Str::limit($project->body, 75) }}</td>
                 <td class="border border-black px-3">
                 @php
                     $stacks = explode('|||', $project->stack);
@@ -96,7 +96,7 @@
             <tr class="even:bg-gray-100 odd:bg-white">
                 <td class="border border-black m-2 px-3">{{ $blog->title }}</td>
                 <td class="border border-black m-2 px-3">{{ $blog->slug }}</td>
-                <td class="border border-black m-2 pl-3">{{ $blog->body }}</td>
+                <td class="border border-black m-2 pl-3">{{ Str::limit($blog->body, 75) }}</td>
                 <td class="border border-black m-2 px-3">{{ $blog->image_url }}</td>
                 <td  class="border border-black px-3" ><button><a href="edit-blog/{{ $blog->id }}">Update</a></button></td>
                 <td  class="border border-black px-3" ><form action="/delete-blog/{{ $blog->id }}" method="POST">
@@ -110,7 +110,7 @@
 
     @else
         {{-- connexion form --}}
-        <div  class="w-11/12 md:w-1/2 m-auto place-content-center mt-24">
+        <div  class="w-11/12 md:w-1/2  m-auto place-content-center mt-24">
             <form action="{{ route('user.login') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 @csrf
                 <div class="flex flex-col space-y-2">

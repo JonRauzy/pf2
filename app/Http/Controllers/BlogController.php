@@ -43,7 +43,7 @@ class BlogController extends Controller
     }
 
     public function showBlog(){
-        $blogs = Blog::all();
+        $blogs = Blog::all()->sortByDesc('id');
         $trends = Blog::trendingArticles();
         return view('blog', ['blogs'=> $blogs, 'trends'=> $trends ]);
     }
