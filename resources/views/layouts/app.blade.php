@@ -35,7 +35,7 @@
     
     @yield('content')
 
-    <button class="fixed bottom-5 right-5 border border-white bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><a href="#top"><i class="fa-solid fa-arrow-up"></i></a></button>
+    <button class="fixed bottom-5 right-5"><a href="#top" class="block border border-white bg-slate-300 px-4 py-2 rounded-md shadow-md opacity-80"><i class="fa-solid fa-arrow-up"></i></a></button>
 
     <footer class="text-center bg-slate-100">
         <p class="pt-6">Copyright &copy; Jon Rauzy - {{date('Y')}}</p>
