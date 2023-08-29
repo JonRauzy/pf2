@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
@@ -49,6 +50,12 @@ class BlogController extends Controller
     }
 
     public function getBlogBySlug(Blog $slug){
+        if(Cookie::get($slug->id)){
+            Cookie::set('$slug->id', '1', 60);
+        }
+
+
+        $slug -> viewCount();
         return view('article', ['blog'=>$slug]);
     }
 

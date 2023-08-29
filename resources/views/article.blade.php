@@ -12,6 +12,7 @@
     <h3 class="text-2xl font-bold text-center py-12">{{ $blog->title }} : </h3>
     <img src="{{ $blog->image_url }}" class="w-full">
     <div class="even:bg-slate-200 md:px-3">
+        <p>Views : {{ $blog->click }}</p>
         <p class="w-full font-thin text-justify md:pr-3 text-gray-600">{{ $blog->body }}</p>
         <p class="font-thin">{{ $blog->created_at}}</p>    
     </div>

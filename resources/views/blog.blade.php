@@ -29,9 +29,9 @@
         <h3 class="text-2xl font-bold text-center py-6 lg:py-12">Trending articles : </h3>
         <div class="w-full flex flex-row gap-1 px-1 lg:gap-0 lg:flex-col bg-white">
         @foreach ($trends as $trend)
-            <a href="blog/{{ $trend->id }}" class="flex flex-col lg:block lg:mb-12 justify-between">
+            <a href="blog/{{ $trend->slug }}" class="flex flex-col lg:block lg:mb-12 justify-between">
                 <h3 class="text-sm md:text-lg text-center">{{ $trend->title }}</h3>
-                <p class="text-xs font-thin text-center text-gray-600">like: {{ $trend->like }} </p>
+                <p class="text-xs font-thin text-center text-gray-600">Views : {{ $trend->click }} </p>
                 <img src="{{ $trend->image_url }}" class="w-full aspect-video object-cover h-20 md:h-48 mb-6">
             </a> 
         @endforeach
