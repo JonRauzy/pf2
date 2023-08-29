@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blog', [BlogController::class, 'showBlogs']);
-Route::get('blog/{slug}', [BlogController::class, 'getBlogBySlug']);
+Route::get('/blog/{slug}', [BlogController::class, 'getBlogBySlug']);
 Route::get('/admin', function() {
     if(Auth::check()){
         $projects = Project::all();
