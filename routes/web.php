@@ -25,8 +25,8 @@ Route::get('/', function () {
     return view('home', ['projects' => $projects]);
 });
 
-Route::get('/blog', [BlogController::class, 'showBlog']);
-
+Route::get('/blog', [BlogController::class, 'showBlogs']);
+Route::get('blog/{slug}', [BlogController::class, 'getBlogBySlug']);
 Route::get('/admin', function() {
     if(Auth::check()){
         $projects = Project::all();
@@ -56,9 +56,6 @@ Route::delete('delete-project/{project}', [ProjectsController::class, 'deletePro
 Route::post('add-blog', [BlogController::class, 'addBlog']);
 Route::get('edit-blog/{blog}', function(Blog $blog){
     return view('edit-blog', ['blog'=>$blog]);
-});
-Route::get('blog/{blog}', function(Blog $blog){
-    return view('article', ['blog'=>$blog]);
 });
 Route::put('send-edited-blog/{blog}', [BlogController::class, 'editBlog']);
 Route::delete('delete-blog/{blog}', [BlogController::class, 'deleteBlog']);

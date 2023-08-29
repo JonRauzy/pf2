@@ -42,10 +42,14 @@ class BlogController extends Controller
         return redirect('admin')->with('success', "Le blog a bien été supprimé ! ");
     }
 
-    public function showBlog(){
+    public function showBlogs(){
         $blogs = Blog::all()->sortByDesc('id');
         $trends = Blog::trendingArticles();
         return view('blog', ['blogs'=> $blogs, 'trends'=> $trends ]);
+    }
+
+    public function getBlogBySlug(Blog $slug){
+        return view('article', ['blog'=>$slug]);
     }
 
 }

@@ -11,7 +11,7 @@
         <h3 class="text-2xl font-bold text-center pt-12 pb-6 lg:py-12">Here's our latest articles : </h3>
         @foreach ($blogs as $blog)
         <div class="even:bg-slate-200 odd:bg-slate-100 md:px-3">
-            <a href="blog/{{ $blog->id }}" >
+            <a href="blog/{{ $blog->slug }}" >
                 <div class="grid grid-cols-3 mb-3 md:mb-6">
                     <div class="col-span-2 px-2">
                         <h3 class="text-lg md:text-2xl">{{ $blog->title }}</h3>

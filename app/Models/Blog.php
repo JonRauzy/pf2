@@ -15,4 +15,8 @@ class Blog extends Model
     public static function trendingArticles() {
         return DB::table('blogs')->orderByDesc('like')->limit(5)->get();
     }
+
+    public function getRouteKeyName(){
+        return 'slug'; 
+    }
 }
