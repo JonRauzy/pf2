@@ -17,7 +17,7 @@
                         <h3 class="text-lg md:text-2xl">{{ $blog->title }}</h3>
                         <p class="font-thin text-justify pr-2 text-gray-600">{{ Str::limit($blog->body, 75) }}</p>
                         <p class="font-thin hover:text-gray-500">Read more...</p>
-                        <p class="font-thin">{{ $blog->created_at}}</p>
+                        <p class="font-thin">{{ \Carbon\Carbon::parse($blog->created_at)->format('d.m.Y') }}</p>
                     </div>
                     <img src="{{ $blog->image_url }}" class="aspect-square object-cover h-48">
                 </div>

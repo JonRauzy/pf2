@@ -54,7 +54,6 @@ class BlogController extends Controller
             Cookie::set('$slug->id', '1', 60);
         }
 
-
         $slug -> viewCount();
         return view('article', ['blog'=>$slug]);
     }
