@@ -28,7 +28,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2">
         <img class="w-9/12 aspect-square object-cover m-auto mb-12 md:px-12:pt-12 shadow-lg" src="{{asset('asset/img/portrait1.png')}}">
         <div class="flex flex-col place-content-center">
-            <h3 class="text-3xl md:text-5xl pb-6">Bringing quality code to your compagny</h3>
+            <h3 class="text-3xl md:text-5xl pb-6">Turning coffee into code since 2022</h3>
             <ul class="space-y-3 last:mb-12 text-xl text-gray-600">
                 <li>Html</li>
                 <li>CSS</li>
@@ -47,7 +47,7 @@
 
     <div class="md:px-12">
         <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
-        <p class="px-12">Hello, I'm Jon! A french living in Brussel for the past 10 years. I just graduate as a Web Developper from the <a href="https://www.cf2m.be/home">CF2M school</a> and now looking for an internship. Our cursus was heavily focus on vanilla PHP and MySQL for the back-end as well as HTML, CSS and vanilla JS for the front-end. We also dipped our toes into Symfony and Node by the end of the year. On the side I got myself into Laravel during my summer break to code this very portfolio and I loved it. Now I'm eager to practice my new skills and to learn even more! Don't hesitate to <a href="#contact">contact me</a> if you're hiring or if you need any more informations about me and the work i can provide. I'll be happy to answer you! Have a great day and thanks for visiting my humble website!</p>
+        <p class="px-12">Hello, I'm Jon, a native French speaker currently residing in Brussels. I recently graduated as a Web Developer from the CF2M school and I'm now seeking an internship opportunity. Throughout my studies, I delved into various aspects of web development. My focus encompassed vanilla PHP and MySQL for back-end development, while I honed my skills in HTML, CSS, and vanilla JavaScript for front-end development. Towards the end of my program, I also gained exposure to Symfony and Node.js.           During my summer break, I dedicated myself to learning Laravel, which I used to create the portfolio you see on this website. Through this experiences, I've discovered a strong affinity for back-end development but I'm still open to gain experience on the front-end side. I'm now eager to put my newly acquired skills into practice and continue expanding my knowledge. If you're currently hiring or would like to learn more about me and the value I can bring to your team, please feel free to contact me. I'm readily available to answer any questions you may have.Thank you for visiting my humble website, and have a wonderful day!</p>
     </div>
 </section>
 
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <img src="{{asset($project->image_url)}}" class="m-auto lg:w-1/2 w-full mb-3 lg:mb-6">
+            <img src="{{asset($project->image_url)}}" class="m-auto lg:w-1/2 lg:h-fit  w-full mb-3 lg:mt-0">
         </div>
     </div>
     @endforeach
