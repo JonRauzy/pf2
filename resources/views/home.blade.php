@@ -26,7 +26,7 @@
     
     <h1 class="text-4xl md:text-5xl font-bold text-center my-6 md:mb-12">Jon Rauzy - Web Developer Junior </h1>
     <div class="grid grid-cols-1 md:grid-cols-2">
-        <img class="w-9/12 m-auto mb-12 md:px-12:pt-12 shadow-lg" src="{{asset('asset/img/portrait1.jpg')}}">
+        <img class="w-9/12 aspect-square object-cover m-auto mb-12 md:px-12:pt-12 shadow-lg" src="{{asset('asset/img/portrait.png')}}">
         <div class="flex flex-col place-content-center">
             <h3 class="text-3xl md:text-5xl pb-6">Bringing quality code to your compagny</h3>
             <ul class="space-y-3 last:mb-12 text-xl text-gray-600">
